@@ -23,9 +23,10 @@ namespace AntiDBG
         [DllImport("kernel32.dll",SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool CheckRemoteDebuggerPresent(IntPtr ProcHHandle, out bool dwReason);
-
+        
         [DllImport("Ntdll.dll",SetLastError =true)]
         static extern uint NtSetInformationThread(IntPtr hThread, int ThreadInformationClass, IntPtr ThreadInformation, uint ThreadInformationLength);
+        
         [DllImport("Kernel32.dll",SetLastError = true)]
         public extern static IntPtr GetCurrentThread();
 
@@ -39,7 +40,6 @@ namespace AntiDBG
                     //MessageBox.Show("Stop Debugging !");
                 return;
                 
-
         }
         public static uint secondTech()
         {
